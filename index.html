@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Progress Report</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        h1 {
+	text-align: center;
+}
+
+form {
+	margin: 0 auto;
+	max-width: 500px;
+	padding: 20px;
+	border: 1px solid #ccc;
+}
+
+label {
+	display: inline-block;
+	width: 150px;
+	text-align: right;
+	margin-right: 20px;
+}
+
+input[type="text"],
+input[type="number"] {
+	padding: 5px;
+	margin-bottom: 10px;
+	width: 250px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+input[type="submit"] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #45a049;
+}
+
+    </style>
+</head>
+<body>
+	<h1>Student Progress Report</h1>
+	
+		<label for="name">Student Name:</label>
+		<input type="text" id="name" value="" required><br>
+
+		<label for="father_name">Father's Name:</label>
+		<input type="text" id="father_name" value="" name="father_name" required><br>
+
+		<label for="english_marks">officeautomation Marks:</label>
+		<input type="number" id="officeautomation_marks" name="officeautomation_marks" min="0" max="100" required><br>
+
+		<label for="math_marks">webdesigning Marks:</label>
+		<input type="number" id="webdesigning_marks" name="webdesigning_marks" min="0" max="100" required><br>
+
+		<label for="science_marks">it Marks:</label>
+		<input type="number" id="it_marks" name="it_marks" min="0" max="100" required><br>
+
+        <label for="science_marks">c Marks:</label>
+		<input type="number" id="c_marks" name="c_marks" min="0" max="100" required><br>
+
+		<input type="submit" value="submit" onclick="generateReport() ,a()">
+    
+
+
+
+
+
+        <h2 id="studentname"></h2>
+        <h2 id="father_name"></h2>
+        <h2 id="officeautomation"></h2>
+        <h2 id="webdesigning"></h2>
+        <h2 id="it"></h2>
+        <h2 id="c"></h2>
+        <h2 id="percentage"></h2>
+        <h2 id="totalmarks"></h2>
+        <h2 id="grade"></h2>
+        
+	
+	
+	
+    <script>
+
+      function a(){
+                const name = document.getElementById("name").value;
+        const fatherName = document.getElementById("father_name").value;
+        const englishMarks = parseInt(document.getElementById("officeautomation_marks").value);
+        const mathMarks = parseInt(document.getElementById("webdesigning_marks").value);
+        const scienceMarks = parseInt(document.getElementById("it_marks").value);
+        const cMarks = parseInt(document.getElementById("c_marks").value);
+
+
+
+       
+      
+        // Calculate total and average marks
+        const obtainmarks = englishMarks + mathMarks + scienceMarks + cMarks;
+        const totalmarks = "400"
+       const percentage = obtainmarks/totalmarks*100
+      
+        // Determine grade based on average marks
+        // let grade = "";
+        if (percentage >= 80) {
+          grade = "A+";
+        } else if (percentage >= 70) {
+          grade = "A";
+        } else if (percentage >= 60) {
+          grade = "B";
+        } else if (percentage >= 50) {
+          grade = "C";}
+          else if (percentage >= 90) {
+          grade = "A++";
+        } else {
+          grade = "FAIL";
+        }
+    
+    
+    
+    
+    
+       
+        var i= document.getElementById('grade').innerHTML=percentage;
+        
+      }
+    function generateReport() {
+        // Get form inputs
+        const name = document.getElementById("name").value;
+        const fatherName = document.getElementById("father_name").value;
+        const englishMarks = parseInt(document.getElementById("officeautomation_marks").value);
+        const mathMarks = parseInt(document.getElementById("webdesigning_marks").value);
+        const scienceMarks = parseInt(document.getElementById("it_marks").value);
+        const cMarks = parseInt(document.getElementById("c_marks").value);
+
+
+
+       
+      
+        // Calculate total and average marks
+        const obtainmarks = englishMarks + mathMarks + scienceMarks + cMarks;
+        const totalmarks = "400"
+       const percentage = obtainmarks/totalmarks*100
+      
+        // Determine grade based on average marks
+        // let grade = "";
+        if (percentage >= 80) {
+          grade = "A+";
+        } else if (percentage >= 70) {
+          grade = "A";
+        } else if (percentage >= 60) {
+          grade = "B";
+        } else if (percentage >= 50) {
+          grade = "C";}
+          else if (percentage >= 90) {
+          grade = "A++";
+        } else {
+          grade = "FAIL";
+        }
+    
+    
+    
+    
+    
+        var a= document.getElementById('studentname').innerHTML=name;
+        var b= document.getElementById('father_name').innerHTML=fatherName;
+        var c= document.getElementById('officeautomation').innerHTML=englishMarks;
+        var d= document.getElementById('webdesigning').innerHTML=mathMarks;
+        var e= document.getElementById('it').innerHTML=scienceMarks;
+        var f= document.getElementById('c').innerHTML=cMarks;
+        var g= document.getElementById('percentage').innerHTML=percentage;
+        var h= document.getElementById('totalmarks').innerHTML=obtainmarks;
+        var i= document.getElementById('percentage').innerHTML=grade;
+        
+      }
+    </script>
+    
+       
+          
+</body>
+</html>
